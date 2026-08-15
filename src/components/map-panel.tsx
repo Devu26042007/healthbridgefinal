@@ -11,7 +11,7 @@ export function MapPanel({
   hospitals: Hospital[];
   activeId: string;
   ambulanceActive: boolean;
-  etaMin?: number;
+  etaMin?: number | undefined;
 }) {
   const [t, setT] = useState(0);
 
