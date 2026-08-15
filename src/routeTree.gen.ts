@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AmbulanceRouteImport } from './routes/ambulance'
+import { Route as BedsRouteImport } from './routes/beds'
+import { Route as HelpRouteImport } from './routes/help'
+import { Route as InstrumentsRouteImport } from './routes/instruments'
+import { Route as InsuranceRouteImport } from './routes/insurance'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ResponderRouteImport } from './routes/responder'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AmbulanceRoute = AmbulanceRouteImport.update({
+  id: '/ambulance',
+  path: '/ambulance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BedsRoute = BedsRouteImport.update({
+  id: '/beds',
+  path: '/beds',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstrumentsRoute = InstrumentsRouteImport.update({
+  id: '/instruments',
+  path: '/instruments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsuranceRoute = InsuranceRouteImport.update({
+  id: '/insurance',
+  path: '/insurance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResponderRoute = ResponderRouteImport.update({
+  id: '/responder',
+  path: '/responder',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ambulance': typeof AmbulanceRoute
+  '/beds': typeof BedsRoute
+  '/help': typeof HelpRoute
+  '/instruments': typeof InstrumentsRoute
+  '/insurance': typeof InsuranceRoute
+  '/login': typeof LoginRoute
+  '/profile': typeof ProfileRoute
+  '/responder': typeof ResponderRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ambulance': typeof AmbulanceRoute
+  '/beds': typeof BedsRoute
+  '/help': typeof HelpRoute
+  '/instruments': typeof InstrumentsRoute
+  '/insurance': typeof InsuranceRoute
+  '/login': typeof LoginRoute
+  '/profile': typeof ProfileRoute
+  '/responder': typeof ResponderRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ambulance': typeof AmbulanceRoute
+  '/beds': typeof BedsRoute
+  '/help': typeof HelpRoute
+  '/instruments': typeof InstrumentsRoute
+  '/insurance': typeof InsuranceRoute
+  '/login': typeof LoginRoute
+  '/profile': typeof ProfileRoute
+  '/responder': typeof ResponderRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ambulance'
+    | '/beds'
+    | '/help'
+    | '/instruments'
+    | '/insurance'
+    | '/login'
+    | '/profile'
+    | '/responder'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/ambulance'
+    | '/beds'
+    | '/help'
+    | '/instruments'
+    | '/insurance'
+    | '/login'
+    | '/profile'
+    | '/responder'
+  id:
+    | '__root__'
+    | '/'
+    | '/ambulance'
+    | '/beds'
+    | '/help'
+    | '/instruments'
+    | '/insurance'
+    | '/login'
+    | '/profile'
+    | '/responder'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AmbulanceRoute: typeof AmbulanceRoute
+  BedsRoute: typeof BedsRoute
+  HelpRoute: typeof HelpRoute
+  InstrumentsRoute: typeof InstrumentsRoute
+  InsuranceRoute: typeof InsuranceRoute
+  LoginRoute: typeof LoginRoute
+  ProfileRoute: typeof ProfileRoute
+  ResponderRoute: typeof ResponderRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ambulance': {
+      id: '/ambulance'
+      path: '/ambulance'
+      fullPath: '/ambulance'
+      preLoaderRoute: typeof AmbulanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/beds': {
+      id: '/beds'
+      path: '/beds'
+      fullPath: '/beds'
+      preLoaderRoute: typeof BedsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/instruments': {
+      id: '/instruments'
+      path: '/instruments'
+      fullPath: '/instruments'
+      preLoaderRoute: typeof InstrumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insurance': {
+      id: '/insurance'
+      path: '/insurance'
+      fullPath: '/insurance'
+      preLoaderRoute: typeof InsuranceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/responder': {
+      id: '/responder'
+      path: '/responder'
+      fullPath: '/responder'
+      preLoaderRoute: typeof ResponderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AmbulanceRoute: AmbulanceRoute,
+  BedsRoute: BedsRoute,
+  HelpRoute: HelpRoute,
+  InstrumentsRoute: InstrumentsRoute,
+  InsuranceRoute: InsuranceRoute,
+  LoginRoute: LoginRoute,
+  ProfileRoute: ProfileRoute,
+  ResponderRoute: ResponderRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
